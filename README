@@ -1,0 +1,8 @@
+Quickstart: 
+Create entries in text file in same directory 'dbz', for each Institution touch a file with the 
+Institution name
+Format for database file: 
+Institution;program;deadline;username;password;app url;cs url;personal statement info;extra url;extra info
+
+EX: 
+toronto;Masters;12/12/12 3pm;USERID;PASSWD;https://apply.sgs.utoronto.ca/;http://web.cs.toronto.edu/program/prospective_gradwhy/Prospective/apply/apply.htm;A one or two page statement of purpose that discusses your career goals, why you want to do research, and the areas of research that interest you. If you have done any original research, please describe the results, their importance, and your particular contributions. If you have specific research plans, outline them here.;https://gradapps.cs.toronto.edu/~apps13/

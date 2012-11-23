@@ -1,0 +1,81 @@
+$def with(schoolname,school,list,tdlist,prof_list)
+
+<html>
+  <head>
+    <title>Madhav's Grad School</title>
+    <link rel="stylesheet" type="text/css" href="../static/tutorial.css" />
+    <link href='http://fonts.googleapis.com/css?family=Gudea|Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+      function SelectAll(id)
+      {
+        document.getElementById(id).focus();
+        document.getElementById(id).select();
+      }
+    </script>
+    </head>
+  <body>
+    <div id="container" class="outerpane">
+      <div class="toppane">
+    <div class="panes">
+    
+    <ul id="schools">
+      $for item in list:
+      <a class="school_button" href="/$item[0]">
+         
+        $if item[0] == schoolname:
+          <span class="selected">
+      <li class="school_button">
+        <span class="school_name"> $item[0] </span>
+        <br/>
+        <span class="date" class="school_button"> $item[1] </span></li></a>
+        $if item == schoolname:
+          </span>
+    </ul>
+    </div>
+    <br/>
+
+    <div class="panes info_stuff" >
+    <ul>
+    $for item in school:
+      <li class="info_stuff">
+    
+      $if item[0] == 'app url' or item[0] == 'cs url' or item[0] == 'extra url':
+        $if item[1] != '':
+          <span class="title">
+          <a href="$item[1]" target="_blank">$item[0]</a> </span>
+      $elif item[0] == 'username' or item[0] == 'password':
+        <span class="title">$item[0]</span>: <input id="$item[0]"
+        onClick="SelectAll('$item[0]');" type="TEXT" value="$item[1]">
+      $else:
+        <span class="title">$item[0]</span>: <span class="value">$item[1]</span>
+      </li>
+    </ul>
+    <ul class="profz_list">
+      $for item in prof_list:
+        <li>
+        <a href="$item[1]" target="_blank"> $item[0] </a>
+        </li>
+      <form action="/addprof/$schoolname" method="post">
+      <input class="profz_list" name="profz" type="TEXT">  <br/>
+      </form>
+  </div>
+  </div> <!--toppane-->
+    <div class="todo">
+      <h2> TODO: </h2>
+      <ul>
+      $for item in tdlist:
+        <li>
+        <span class="bullet"> - </span>$item
+        </li>
+      <li>
+        <form action="/todo/$schoolname" method="post">
+        <span class="bullet"> - </span>
+        <input class="input_text" name="todo1" type="TEXT"> 
+        </form>
+      </ul>
+      
+  </div><!--todo-->
+  </div> <!--outerpane-->
+  </body>
+  </html>
+
