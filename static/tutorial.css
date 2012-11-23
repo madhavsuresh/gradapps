@@ -83,6 +83,8 @@ body{
 #container{
 width:815;
 height:auto;
+padding-left: 20px;
+padding-top: 10px;
 }
 
 .toppane{
@@ -190,6 +192,7 @@ background:
   margin-top:20px;
 }
 .todo li{
+  list-style-type: none;
 
 }
 .todo h2{
